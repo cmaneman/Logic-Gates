@@ -7,7 +7,7 @@ using namespace std;
 
 int AND_GATE(int, int, int, string);
 int OR_GATE(int, int, int, string);
-int NOT_GATE(int, int, int, string);
+int NOT_GATE(int&, int&, int&, string);
 int NAND_GATE(int, int, int, string);
 int NOR_GATE(int, int, int, string);
 int XOR_GATE(int, int, int, string);
@@ -114,41 +114,73 @@ int AND_GATE(int X_in, int Y_in, int Z_out, string gateN)
 	-|____ )
 	*/
 
-	return Z_out;
+	return X_in, Y_in, Z_out;
 }
 
 int OR_GATE(int X_in, int Y_in, int Z_out, string gateN)
 {
-	cout << "\nNow using the " << gateN << " and the two inputs" << X_in << " and " << Y_in << ", the output will be: "<< Z_out <<".\n\n";
-	return Z_out;
+	if (X_in == 1 && Y_in == 1)
+	{
+		Z_out = 1;
+		cout << "\nNow using the " << gateN << " and the two inputs" << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is true for this gate.\n\n";
+	}
+	else if (X_in != Y_in)
+	{
+		Z_out = 1;
+		cout << "\nNow using the " << gateN << " and the two inputs " << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is true  for this gate.\n\n";
+	}
+	else
+	{
+		Z_out = 0;
+		cout << "\nNow using the " << gateN << " and the two inputs " << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is false for this gate.\n\n";
+	}
+	//Make image of logic gate
+	return X_in, Y_in, Z_out;
 }
 
-int NOT_GATE(int X_in, int Y_in, int Z_out, string gateN)
+int NOT_GATE(int& X_in, int& Y_in, int& Z_out, string gateN)
 {
-	cout << "\nNow using the " << gateN << " and the two inputs" << X_in << " and " << Y_in << ", the output will be: "<< Z_out <<".\n\n";
-	return Z_out;
+	if (X_in == 0)
+	{
+		cout << "\nNow using the " << gateN << " and your X value: " << X_in << ", you input was reversed.\n";
+		X_in == 1;
+		cout << "Your X value is now: " << X_in << ".\n\n";
+	}
+
+	if (Y_in == 0)
+	{
+		cout << "\nNow using the " << gateN << " and your Y value: " << Y_in << ", you input was reversed.\n";
+		Y_in == 1;
+		cout << "Your Y value is now: "<<Y_in<<".\n\n";
+	}
+	//Make image of logic gate
+	return X_in, Y_in;
 }
 
 int NAND_GATE(int X_in, int Y_in, int Z_out, string gateN)
 {
 	cout << "\nNow using the " << gateN << " and the two inputs" << X_in << " and " << Y_in << ", the output will be: "<< Z_out <<".\n\n";
-	return Z_out;
+	//Make image of logic gate
+	return X_in, Y_in, Z_out;
 }
 
 int NOR_GATE(int X_in, int Y_in, int Z_out, string gateN)
 {
 	cout << "\nNow using the " << gateN << " and the two inputs" << X_in << " and " << Y_in << ", the output will be: "<< Z_out <<".\n\n";
-	return Z_out;
+	//Make image of logic gate
+	return X_in, Y_in, Z_out;
 }
 
 int XOR_GATE(int X_in, int Y_in, int Z_out, string gateN)
 {
 	cout << "\nNow using the " << gateN << " and the two inputs" << X_in << " and " << Y_in << ", the output will be: "<< Z_out <<".\n\n";
-	return Z_out;
+	//Make image of logic gate
+	return X_in, Y_in, Z_out;
 }
 
 int XNOR_GATE(int X_in, int Y_in, int Z_out, string gateN)
 {
 	cout << "\nNow using the " << gateN << " and the two inputs" << X_in << " and " << Y_in << ", the output will be: "<< Z_out <<".\n\n";
-	return Z_out;
+	//Make image of logic gate
+	return X_in, Y_in, Z_out;
 }
