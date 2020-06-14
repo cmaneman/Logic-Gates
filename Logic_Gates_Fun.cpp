@@ -89,17 +89,17 @@ int AND_GATE(int X_in, int Y_in, int Z_out, string gateN)
 	{
 
 		Z_out = 1;
-		cout << "\nNow using the " << gateN << " and the two inputs" << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is true for this gate.\n\n";
+		cout << "\nNow using the " << gateN << " and the X and Y values: " << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is true for this gate.\n\n";
 	}
 	else if(X_in == 0 && Y_in == 0)
 	{
 		Z_out = 0;
-		cout << "\nNow using the " << gateN << " and the two inputs " << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is false for this gate.\n\n";
+		cout << "\nNow using the " << gateN << " and the X and Y values: " << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is false for this gate.\n\n";
 	}
 	else
 	{
 		Z_out = 0;
-		cout << "\nNow using the " << gateN << " and the two inputs " << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is false for this gate.\n\n";
+		cout << "\nNow using the " << gateN << " and the X and Y values: " << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is false for this gate.\n\n";
 	}
 		
 	cout <<endl<<endl;
@@ -122,17 +122,17 @@ int OR_GATE(int X_in, int Y_in, int Z_out, string gateN)
 	if (X_in == 1 && Y_in == 1)
 	{
 		Z_out = 1;
-		cout << "\nNow using the " << gateN << " and the two inputs" << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is true for this gate.\n\n";
+		cout << "\nNow using the " << gateN << " and the X and Y values: " << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is true for this gate.\n\n";
 	}
 	else if (X_in != Y_in)
 	{
 		Z_out = 1;
-		cout << "\nNow using the " << gateN << " and the two inputs " << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is true  for this gate.\n\n";
+		cout << "\nNow using the " << gateN << " and the X and Y values: " << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is true  for this gate.\n\n";
 	}
 	else
 	{
 		Z_out = 0;
-		cout << "\nNow using the " << gateN << " and the two inputs " << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is false for this gate.\n\n";
+		cout << "\nNow using the " << gateN << " and the X and Y values: " << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is false for this gate.\n\n";
 	}
 	//Make image of logic gate
 	return X_in, Y_in, Z_out;
@@ -153,14 +153,41 @@ int NOT_GATE(int& X_in, int& Y_in, int& Z_out, string gateN)
 		Y_in == 1;
 		cout << "Your Y value is now: "<<Y_in<<".\n\n";
 	}
+	/*
+		 | \
+		-|(NOT)7o-
+		 | /
+	*/
 	//Make image of logic gate
 	return X_in, Y_in;
 }
 
 int NAND_GATE(int X_in, int Y_in, int Z_out, string gateN)
 {
-	cout << "\nNow using the " << gateN << " and the two inputs" << X_in << " and " << Y_in << ", the output will be: "<< Z_out <<".\n\n";
-	//Make image of logic gate
+	if (X_in == 1 && Y_in == 1)
+	{
+		Z_out = 0;
+		cout << "\nNow using the " << gateN << " and the X and Y values: " << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is false for this gate.\n\n";
+	}
+	else
+	{
+		Z_out = 1;
+		cout << "\nNow using the " << gateN << " and the X and Y values: " << X_in << " and " << Y_in << ", the output will be: " << Z_out << " which is true for this gate.\n\n";
+	}
+
+	cout << endl << endl;
+	cout << "\t   ____	\n";
+	cout << "\t" << X_in << "-|     )	\n";
+	cout << "\t  | NAND  )o-" << Z_out << endl;
+	cout << "\t" << Y_in << "-|____ )";
+	cout << endl << endl;
+	
+	/*____
+	-|     )
+	 | NAND )o-
+	-|____ )
+	*/
+
 	return X_in, Y_in, Z_out;
 }
 
